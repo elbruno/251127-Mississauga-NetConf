@@ -39,6 +39,12 @@ Welcome to the Mississauga User Group .NET Conference resources repository! This
 - [.NET Aspire Overview](https://learn.microsoft.com/en-us/dotnet/aspire/)
 - [.NET Aspire Samples](https://github.com/dotnet/aspire-samples)
 
+### Performance
+
+- [Performance Improvements in .NET 10](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-10/)
+- [.NET Performance Video](https://www.youtube.com/watch?v=snnULnTWcNM)
+- [BenchmarkDotNet](https://benchmarkdotnet.org/)
+
 ## 🗂️ Repository Structure
 
 ```
@@ -69,7 +75,7 @@ Shows how to build cloud-native applications with .NET Aspire, including:
 Demonstrates .NET Aspire orchestrating Python services.
 
 ### 4. Performance Comparison
-Benchmarks comparing performance improvements between .NET 8 and .NET 10.
+Benchmarks comparing performance improvements between .NET 8 and .NET 10 using [BenchmarkDotNet](https://benchmarkdotnet.org/).
 
 ### 5. Agent Framework Samples
 Basic samples from the Microsoft Agent Framework for building AI agents.
