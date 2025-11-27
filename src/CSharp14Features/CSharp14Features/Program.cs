@@ -44,9 +44,10 @@ Console.WriteLine("  Demo Complete!");
 Console.WriteLine("===========================================");
 
 // =============================================================
-// Demo 1: Field Keyword
+// Demo 1: Field Keyword (Preview Feature)
 // The 'field' keyword provides access to the compiler-generated 
-// backing field in property accessors
+// backing field in property accessors. This feature requires
+// <LangVersion>preview</LangVersion> in the project file.
 // =============================================================
 public static class FieldKeywordDemo
 {
@@ -70,7 +71,7 @@ public static class FieldKeywordDemo
     }
 }
 
-// Using the 'field' keyword to access backing field directly
+// Using the 'field' keyword to access backing field directly (C# 13+ preview feature)
 public class PersonWithField
 {
     public PersonWithField(string firstName, string lastName)
