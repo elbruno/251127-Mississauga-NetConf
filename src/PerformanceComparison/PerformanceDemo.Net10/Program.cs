@@ -8,6 +8,7 @@
 
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Diagnosers;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 using System.Text.RegularExpressions;
@@ -22,6 +23,7 @@ Console.WriteLine("===========================================\n");
 BenchmarkRunner.Run<PerformanceBenchmarks>();
 
 [MemoryDiagnoser]
+[ThreadingDiagnoser]
 [Config(typeof(FastConfig))]
 public class PerformanceBenchmarks
 {
@@ -164,5 +166,10 @@ public class FastConfig : ManualConfig
         AddJob(Job.ShortRun
             .WithWarmupCount(1)
             .WithIterationCount(3));
+
+        // Add additional columns for detailed time metrics
+        AddColumn(BenchmarkDotNet.Columns.StatisticColumn.Min);
+        AddColumn(BenchmarkDotNet.Columns.StatisticColumn.Max);
+        AddColumn(BenchmarkDotNet.Columns.StatisticColumn.Median);
     }
 }
