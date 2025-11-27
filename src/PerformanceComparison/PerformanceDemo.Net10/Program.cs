@@ -28,8 +28,6 @@ public class PerformanceBenchmarks
     private const int Iterations = 1000000;
     private const int DictIterations = 100000;
     private const int LinqItems = 10000;
-    private const int SpanIterations = 10000;
-    private const int RegexIterations = 10000;
 
     private List<int> _list = null!;
     private Dictionary<int, string> _dict = null!;
