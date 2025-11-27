@@ -45,8 +45,31 @@ BenchmarkDotNet is a powerful .NET library for benchmarking. It handles:
 - Warm-up iterations
 - Statistical analysis
 - Memory allocation tracking (via `[MemoryDiagnoser]`)
+- Threading metrics tracking (via `[ThreadingDiagnoser]`)
 - Multiple runtime comparisons
 - Detailed result reports
+
+## Metrics Collected
+
+Each benchmark reports the following metrics:
+
+### Time Metrics
+- **Mean** - Average execution time
+- **Error** - Half of 99.9% confidence interval
+- **StdDev** - Standard deviation
+- **Min** - Minimum execution time
+- **Max** - Maximum execution time
+- **Median** - Median execution time
+
+### Memory Metrics (MemoryDiagnoser)
+- **Gen0** - GC Generation 0 collections per 1000 operations
+- **Gen1** - GC Generation 1 collections per 1000 operations
+- **Gen2** - GC Generation 2 collections per 1000 operations
+- **Allocated** - Allocated memory per single operation
+
+### Threading Metrics (ThreadingDiagnoser)
+- **Completed Work Items** - Number of completed thread pool work items
+- **Lock Contentions** - Number of lock contentions
 
 ## Expected Results
 
