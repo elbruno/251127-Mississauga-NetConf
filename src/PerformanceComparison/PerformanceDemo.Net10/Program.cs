@@ -23,27 +23,32 @@ BenchmarkRunner.Run<PerformanceBenchmarks>();
 public class PerformanceBenchmarks
 {
     private const int Iterations = 10000;
-    private int[] _array = null!;
     private List<int> _list = null!;
     private Dictionary<int, string> _dict = null!;
     private IEnumerable<int> _numbers = null!;
     private Regex _regex = null!;
     private string _testString = null!;
+    private int[] _unsortedArray = null!;
 
     [GlobalSetup]
     public void Setup()
     {
-        _array = new int[Iterations];
         _list = new List<int>(Iterations);
         _dict = new Dictionary<int, string>(Iterations);
         _numbers = Enumerable.Range(1, Iterations);
         _regex = new Regex(@"\d+", RegexOptions.Compiled);
         _testString = "Hello 123 World 456 Test 789";
+        _unsortedArray = new int[1000];
 
         for (int i = 0; i < Iterations; i++)
         {
             _list.Add(i);
             _dict[i] = $"Value_{i}";
+        }
+
+        for (int i = 0; i < 1000; i++)
+        {
+            _unsortedArray[i] = 1000 - i;
         }
     }
 
@@ -54,15 +59,10 @@ public class PerformanceBenchmarks
     }
 
     [Benchmark]
-    public int ListAddAndSum()
+    public int ListIteration()
     {
-        var list = new List<int>();
-        for (int i = 0; i < 1000; i++)
-        {
-            list.Add(i);
-        }
         int sum = 0;
-        foreach (var item in list)
+        foreach (var item in _list)
         {
             sum += item;
         }
@@ -84,11 +84,7 @@ public class PerformanceBenchmarks
     [Benchmark]
     public int ArraySortAndSearch()
     {
-        var array = new int[1000];
-        for (int i = 0; i < 1000; i++)
-        {
-            array[i] = 1000 - i;
-        }
+        var array = (int[])_unsortedArray.Clone();
         Array.Sort(array);
         return Array.BinarySearch(array, 500);
     }

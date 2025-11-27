@@ -28,10 +28,10 @@ dotnet run -c Release
 ## Benchmarks Included
 
 1. **String Concatenation** - Tests string operations
-2. **List Operations** - Tests collection add and iteration
-3. **Dictionary Operations** - Tests dictionary lookups
+2. **List Iteration** - Tests collection iteration and sum
+3. **Dictionary Lookup** - Tests dictionary lookups
 4. **LINQ Operations** - Tests LINQ query performance
-5. **Array Operations** - Tests array manipulation and sorting
+5. **Array Sort and Search** - Tests array sorting and binary search
 6. **Span Operations** - Tests Span<T> operations
 7. **Task Operations** - Tests async/parallel task execution
 8. **Regex Matching** - Tests regular expression performance
