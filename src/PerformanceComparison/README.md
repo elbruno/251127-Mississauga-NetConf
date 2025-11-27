@@ -1,6 +1,13 @@
 # Performance Comparison: .NET 8 vs .NET 10
 
-This folder contains console applications that demonstrate performance improvements between .NET 8 and .NET 10.
+This folder contains console applications that demonstrate performance improvements between .NET 8 and .NET 10 using [BenchmarkDotNet](https://benchmarkdotnet.org/).
+
+## 📚 Reference Resources
+
+- [Performance Improvements in .NET 10](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-10/) - Stephen Toub's comprehensive blog post
+- [.NET Performance Video](https://www.youtube.com/watch?v=snnULnTWcNM) - Performance improvements video
+- [BenchmarkDotNet Documentation](https://benchmarkdotnet.org/)
+- [BenchmarkDotNet NuGet Package](https://www.nuget.org/packages/BenchmarkDotNet)
 
 ## Running the Demos
 
@@ -21,13 +28,23 @@ dotnet run -c Release
 ## Benchmarks Included
 
 1. **String Concatenation** - Tests string operations
-2. **List Operations** - Tests collection add and iteration
-3. **Dictionary Operations** - Tests dictionary lookups
+2. **List Iteration** - Tests collection iteration and sum
+3. **Dictionary Lookup** - Tests dictionary lookups
 4. **LINQ Operations** - Tests LINQ query performance
-5. **Array Operations** - Tests array manipulation and sorting
+5. **Array Sort and Search** - Tests array sorting and binary search
 6. **Span Operations** - Tests Span<T> operations
 7. **Task Operations** - Tests async/parallel task execution
 8. **Regex Matching** - Tests regular expression performance
+
+## About BenchmarkDotNet
+
+BenchmarkDotNet is a powerful .NET library for benchmarking. It handles:
+
+- Warm-up iterations
+- Statistical analysis
+- Memory allocation tracking (via `[MemoryDiagnoser]`)
+- Multiple runtime comparisons
+- Detailed result reports
 
 ## Expected Results
 
