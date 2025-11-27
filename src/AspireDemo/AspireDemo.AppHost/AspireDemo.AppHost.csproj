@@ -1,0 +1,16 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.0.1">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>d33aee42-f42f-4a17-b0f9-be1ca204954f</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AspireDemo.ApiService\AspireDemo.ApiService.csproj" />
+    <ProjectReference Include="..\AspireDemo.Web\AspireDemo.Web.csproj" />
+  </ItemGroup>
+
+</Project>
